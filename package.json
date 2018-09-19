@@ -1,7 +1,11 @@
 {
   "name": "tinytask",
+  "description": "A model Vue project in the form of tiny task manager.",
   "version": "0.1.0",
   "license": "AAL",
+  "author": "Steven Xie <hello@stevenxie.me>",
+  "repository": "https://github.com/steven-xie/tinytask",
+  "bugs": "https://github.com/steven-xie/tinytask/issues",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,6 +13,8 @@
   },
   "dependencies": {
     "git-hooks": "^1.1.10",
+    "lodash": "^4.17.11",
+    "nanoid": "^1.2.3",
     "vue": "^2.5.17",
     "vuex": "^3.0.1"
   },
