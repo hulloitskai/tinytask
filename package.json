@@ -1,13 +1,14 @@
 {
   "name": "tinytask",
   "version": "0.1.0",
-  "private": true,
+  "license": "AAL",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "git-hooks": "^1.1.10",
     "vue": "^2.5.17",
     "vuex": "^3.0.1"
   },
