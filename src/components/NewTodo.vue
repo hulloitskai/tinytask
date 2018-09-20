@@ -46,8 +46,9 @@ input {
   outline: none;
   font-size: 11pt;
   font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
 
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(229, 229, 229);
   color: #6b6b6b;
   @include easytrans();
 
@@ -75,7 +76,7 @@ button {
   font-size: 11pt;
 
   &:hover {
-    background-color: rgb(163, 163, 163);
+    background-color: #a5d6a7;
   }
 }
 </style>

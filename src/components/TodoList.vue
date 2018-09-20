@@ -15,10 +15,6 @@ import NewTodo from "./NewTodo.vue";
 
 export default {
   name: "todo-list",
-  created() {
-    const todos = ["Mow the lawn", "Eat the frog", "Buy Jesus body pillow"];
-    todos.forEach(todo => this.$store.commit("addTodo", { title: todo }));
-  },
   computed: mapGetters({ todos: "sortedTodos" }),
   components: { TodoItem, NewTodo }
 };
