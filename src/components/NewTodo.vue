@@ -5,8 +5,8 @@
       v-model="text"
       placeholder="...add something else to do..."
     />
-    <button class="add flex" @click="handleSubmit">
-      <i class="fas fa-plus" />
+    <button class="add flex" :disabled="!text" @click="handleSubmit">
+      <i class="fas fa-plus" aria-hidden="true" />
     </button>
   </form>
 </template>
@@ -40,11 +40,11 @@ export default {
 input {
   flex: 1;
   align-self: stretch;
-  padding: 10px;
+  padding: 12px;
 
   border: none;
   outline: none;
-  font-size: 11pt;
+  font-size: 11.5pt;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
 
@@ -64,10 +64,11 @@ input {
 
 button {
   padding: 11px;
+  align-items: center;
+  justify-content: center;
+
   border: none;
   outline: none;
-  cursor: pointer;
-
   background: rgb(187, 187, 187);
   color: white;
   @include easytrans();
@@ -75,8 +76,12 @@ button {
   font-family: "Cabin", sans-serif;
   font-size: 11pt;
 
-  &:hover {
-    background-color: #a5d6a7;
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #a5d6a7;
+    }
   }
 }
 </style>

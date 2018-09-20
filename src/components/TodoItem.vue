@@ -1,8 +1,11 @@
 <template>
-  <div :class="['todo-item flex col', { done: todo.done }]">
-    <div class="slideable" v-on:click="toggleDone">
+  <div :class="['todo-item flex', { done: todo.done }]">
+    <div class="content flex" @click="toggleDone">
       <p class="title">{{ todo.title }}</p>
     </div>
+    <button class="remove flex col" @click="remove">
+      <i class="fa fa-trash" aria-hidden="true" />
+    </button>
   </div>
 </template>
 
@@ -17,6 +20,9 @@ export default {
   methods: {
     toggleDone() {
       this.$store.commit("toggleTodo", this.todo.id);
+    },
+    remove() {
+      this.$store.commit("removeTodo", this.todo.id);
     }
   }
 };
@@ -28,11 +34,16 @@ export default {
 }
 
 .todo-item {
+  position: relative;
   align-self: stretch;
-  align-items: stretch;
+  overflow: hidden;
+
+  &:hover .remove {
+    opacity: 0.5;
+  }
 
   &.done {
-    .slideable {
+    .content {
       background-color: #9e9e9e;
     }
     .title {
@@ -41,20 +52,51 @@ export default {
   }
 }
 
-.slideable {
+.content {
+  flex: 1;
   padding: 15px;
-  cursor: pointer;
 
+  cursor: pointer;
   background-color: #66bb6a;
   @include easytrans();
 
   &:hover {
-    opacity: 0.85;
+    background-color: #66bb6ad3;
   }
 }
 
 .title {
   color: #e8f5e9;
   @include easytrans();
+}
+
+.remove {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -25px;
+
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  opacity: 0;
+  color: #ffcdd2;
+  background-color: grey;
+  @include easytrans();
+
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+
+  &:hover {
+    right: 0;
+    opacity: 1 !important;
+    background-color: #ef5350;
+  }
+
+  i {
+    font-size: 9pt;
+  }
 }
 </style>
