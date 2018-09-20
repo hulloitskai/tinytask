@@ -1,6 +1,6 @@
 <template>
   <div :class="['todo-item flex', { done: todo.done }]">
-    <div class="content flex" @click="toggleDone">
+    <div class="content flex" @click="toggleDone" :title="todo.title">
       <p class="title">{{ todo.title }}</p>
     </div>
     <button class="remove flex col" @click="remove">
@@ -81,6 +81,7 @@ export default {
   top: 0;
   bottom: 0;
   right: -25px;
+  margin: 0;
 
   cursor: pointer;
   border: none;

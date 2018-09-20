@@ -66,6 +66,7 @@ input {
 }
 
 button {
+  margin: 0;
   padding: 0 13px;
   align-items: center;
   justify-content: center;
@@ -75,7 +76,7 @@ button {
   border-radius: 0;
   outline: none;
 
-  background: rgb(187, 187, 187);
+  background-color: rgb(187, 187, 187);
   color: white;
   @include easytrans();
 
@@ -83,6 +84,7 @@ button {
   font-size: 11pt;
 
   &:not(:disabled) {
+    background-color: rgb(168, 168, 168);
     cursor: pointer;
 
     &:hover {
