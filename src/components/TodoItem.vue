@@ -39,15 +39,21 @@ export default {
   overflow: hidden;
 
   &:hover .remove {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   &.done {
     .content {
-      background-color: #9e9e9e;
+      background-color: #888888;
+      &:hover {
+        background-color: #8a8a8aec;
+      }
     }
     .title {
       color: lightgrey;
+    }
+    .remove {
+      background-color: rgb(228, 228, 228);
     }
   }
 }
@@ -82,7 +88,7 @@ export default {
 
   opacity: 0;
   color: #ffcdd2;
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
   @include easytrans();
 
   justify-content: center;
@@ -92,7 +98,7 @@ export default {
   &:hover {
     right: 0;
     opacity: 1 !important;
-    background-color: #ef5350;
+    background-color: #ef5350 !important;
   }
 
   i {

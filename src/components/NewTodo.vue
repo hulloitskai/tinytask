@@ -40,10 +40,13 @@ export default {
 input {
   flex: 1;
   align-self: stretch;
+  margin: 0;
   padding: 12px;
 
   border: none;
+  border-radius: 0;
   outline: none;
+
   font-size: 11.5pt;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
@@ -63,12 +66,15 @@ input {
 }
 
 button {
-  padding: 11px;
+  padding: 0 13px;
   align-items: center;
   justify-content: center;
 
+  cursor: not-allowed;
   border: none;
+  border-radius: 0;
   outline: none;
+
   background: rgb(187, 187, 187);
   color: white;
   @include easytrans();
